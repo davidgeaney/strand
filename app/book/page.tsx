@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { Suspense, useState, useEffect } from "react"
 import { useSearchParams } from "next/navigation"
 import { SiteLayout } from "@/components/site-layout"
 import { Calendar } from "@/components/ui/calendar"
@@ -8,7 +8,8 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 
-export default function BookingPage() {
+// Wrapper component to handle search params
+function BookingPageContent() {
   const searchParams = useSearchParams()
   const [date, setDate] = useState<Date | undefined>()
 
@@ -79,3 +80,11 @@ export default function BookingPage() {
   )
 }
 
+// Main page component with Suspense
+export default function BookingPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <BookingPageContent />
+    </Suspense>
+  )
+}
