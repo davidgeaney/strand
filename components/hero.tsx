@@ -27,10 +27,10 @@ export function Hero() {
               backdrop of Falcarragh's stunning coastline.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
-              <Button asChild size="lg" className="text-lg py-6 px-8">
+              <Button asChild size="lg" className="text-lg py-6 px-8 z-10">
                 <Link href="/menu">Explore Menu</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="group text-lg py-6 px-8">
+              <Button asChild variant="outline" size="lg" className="group text-lg py-6 px-8 z-10">
                 <Link href="/book">
                   Book a Table
                   <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
