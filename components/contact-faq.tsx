@@ -14,8 +14,8 @@ const faqs = [
       "Reservations are recommended, especially during busy hours. You can book a table by calling us at (074) 913 5907 or using our online booking system.",
   },
   {
-    question: "Do you offer takeaway or delivery?",
-    answer: "Yes, we offer both takeaway and delivery. You can place an order online or call us at (074) 913 5907.",
+    question: "Do you offer takeaway?",
+    answer: "Yes, you can place an order online. Call us at (074) 913 5907.",
   },
   {
     question: "Do you host private events or catering?",

@@ -1,91 +1,142 @@
+"use client"
+
 import Image from "next/image"
 import { SiteLayout } from "@/components/site-layout"
+import { motion } from "framer-motion"
 
 export default function AboutPage() {
   return (
     <SiteLayout>
-      <section className="py-12 md:py-24">
+      {/* Header Section */}
+      <section className="relative py-24 lg:py-32 bg-background">
         <div className="container px-4 mx-auto">
-          <div className="max-w-3xl mx-auto mb-16">
-            <h1 className="font-cormorant text-5xl md:text-7xl mb-6">About</h1>
-            <p className="text-lg md:text-xl text-muted-foreground">
-              Welcome to Strand Road Bar & Kitchen, where great food, warm hospitality, and a vibrant atmosphere come together to create unforgettable experiences. Nestled in the heart of Falcarragh, we are proud to be a cornerstone of the local community, offering a unique blend of delicious cuisine, handcrafted drinks, and a welcoming vibe that feels like home.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="relative aspect-[4/3]">
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/strandaboutpageimg1-RR03nUBoriy6G0iuanwIl4hz1sX3x1.png"
-                alt="Strand Road staff members in branded t-shirts"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-3xl mx-auto text-center"
+          >
+            <div className="flex flex-col items-center">
+              <span className="text-primary/80 font-serif italic text-xl mb-4">Est. 2020</span>
+              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl mb-3 relative">
+              Welcome to Strand Road Bar & Kitchen
+                <span className="block h-1 w-24 bg-primary/60 mx-auto mt-6"></span>
+              </h1>
             </div>
-            <div className="relative aspect-[4/3] md:translate-y-16">
+            <p className="text-xl md:text-2xl text-muted-foreground/90 mb-12">
+            Good food, good company, and a place that feels like home.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Story Section */}
+      <section className="py-20 lg:py-32">
+        <div className="container px-4 mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center mb-24">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-6"
+            >
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl">A Place for Good Food & Good Company</h2>
+              <div className="space-y-4 text-lg text-muted-foreground">
+                <p>
+                Strand Road started as a small, family-run spot in Falcarragh, and over the years, it’s become a favorite for locals and visitors alike. We’ve made a few changes—tweaking the menu, refreshing the space—but the heart of it all stays the same: simple, great food served in a relaxed, welcoming setting.
+                </p>
+                <p>
+                Here’s what matters to us:
+                </p>
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative aspect-[4/3] rounded-2xl overflow-hidden"
+            >
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/strandaboutpageimg2-L3Q5qziqTjzWPvrorPVGNl89BFX4Pp.png"
                 alt="Staff members showing a humorous 'Free Beer Tomorrow' sign"
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
-            </div>
-            <div className="relative aspect-[4/3] lg:col-span-1 md:col-span-2 lg:translate-y-32">
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/strandaboutpageimg3-617fUtsY2Km1RbI5naazGUKdgFhaX6.png"
-                alt="Kitchen team posing for a photo"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-            </div>
+            </motion.div>
           </div>
 
-          <div className="max-w-3xl mx-auto mt-24">
-            <div className="grid md:grid-cols-2 gap-12">
-              <div>
-                <h2 className="font-cormorant text-3xl mb-4">Our Story</h2>
-                <p className="text-muted-foreground mb-4">
-                  Founded in 2020, Strand Road Bar & Kitchen has been a labor of love for our team. What began as a cozy, family-run bar and restaurant in the charming town of Falcarragh has quickly become a cherished gathering spot for locals and visitors alike.
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                title: "Friendly, No-Fuss Service",
+                description: "We keep things easygoing. Whether you're here for a quick pint or a long meal, you’ll always get a warm welcome and honest hospitality.."
+              },
+              {
+                title: "Fresh Ingredients, No Shortcuts",
+                description: "We work with local suppliers to bring in quality ingredients and let them speak for themselves—simple, fresh, and full of flavor."
+              },
+              {
+                title: "Food That Hits the Spot",
+                description: "Good cooking doesn’t need to be complicated. We focus on solid flavors, proper techniques, and dishes that are worth coming back for."
+              }
+            ].map((value, index) => (
+              <motion.div
+                key={value.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className="group relative p-8 rounded-2xl bg-background/50 backdrop-blur-sm border transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:bg-background"
+              >
+                <div className="absolute inset-0 rounded-2xl bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <h3 className="relative font-serif text-2xl mb-4">{value.title}</h3>
+                <p className="relative text-muted-foreground">{value.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                  Over the years, we’ve refined our menu and enhanced our space, but our core values have always stayed the same. At Strand Road Bar & Kitchen, we’re proud to offer a welcoming atmosphere where great food, handcrafted drinks, and good company come together to create unforgettable moments.
+      {/* Team Section */}
+      <section className="py-20 lg:py-32 bg-accent/5">
+        <div className="container px-4 mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative aspect-[4/3] rounded-2xl overflow-hidden"
+            >
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/strandaboutpageimg3-617fUtsY2Km1RbI5naazGUKdgFhaX6.png"
+                alt="Kitchen team"
+                fill
+                className="object-cover"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-6"
+            >
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl">Meet the Team</h2>
+              <div className="space-y-4 text-lg text-muted-foreground">
+                <p>
+                We’re a close-knit team who enjoy what we do—serving great food and making people feel at home. Whether it’s in the kitchen or front of house, everyone plays a part in keeping things running smoothly.
                 </p>
-                <p className="text-muted-foreground">
-                  Our journey has been marked by a commitment to quality, innovation, and warm hospitality. We've
-                  evolved our menu and space over the years, but our core values remain unchanged.
+                <p>
+                No fuss, no formality—just a group of people who take pride in good hospitality and a well-cooked meal.
                 </p>
               </div>
-              <div>
-                <h2 className="font-cormorant text-3xl mb-4">Our Philosophy</h2>
-                <p className="text-muted-foreground mb-4">
-                  At Strand Road, we believe that great food is more than just sustenance—it's an experience. We're
-                  committed to sourcing the finest local and seasonal ingredients, and our chefs craft each dish with
-                  passion and creativity.
-                </p>
-                <p className="text-muted-foreground">
-                  Our philosophy extends beyond the kitchen. We strive to create a welcoming atmosphere where our guests
-                  can relax, connect, and create lasting memories over exceptional food and drink.
-                </p>
-              </div>
-            </div>
-            <div className="mt-12">
-              <h2 className="font-cormorant text-3xl mb-4">Our Team</h2>
-              <p className="text-muted-foreground mb-4">
-                Behind every great restaurant is a dedicated team. Our staff, from the kitchen to the front of house,
-                are passionate about food and hospitality. Many have been with us for years, contributing to the warm,
-                family-like atmosphere that our guests have come to love.
-              </p>
-              <p className="text-muted-foreground">
-                Led by our head chef, Michael, our team works tirelessly to ensure
-                that every visit to Strand Road Bar & Kitchen is special.
-              </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
     </SiteLayout>
   )
 }
-

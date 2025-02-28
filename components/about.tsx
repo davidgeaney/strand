@@ -33,17 +33,15 @@ export function About() {
           <motion.div className="space-y-6 lg:pl-12" style={{ y }}>
             <span className="text-sm tracking-wider text-accent uppercase">Our Story</span>
             <h2 className="font-cormorant text-4xl lg:text-5xl font-medium leading-tight">
-              A Culinary Journey Through Tradition & Innovation
+              What We're About
             </h2>
             <p className="text-lg text-muted-foreground">
-              At Strand Road Bar & Kitchen, we blend traditional cooking methods with contemporary techniques to create
-              an unforgettable dining experience. Our commitment to quality ingredients and exceptional service has made
-              us a destination for food enthusiasts and casual diners alike.
+            Good food, great atmosphere, and a focus on the things that matter. At Strand Road, we keep it simple—fresh ingredients, proper cooking, and a warm, welcoming space where you can relax and enjoy a meal, whether it’s a casual bite or something special.
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <a
                 href="/about"
-                className="inline-block px-6 py-3 border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                className="inline-block px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors rounded-md"
               >
                 Learn More About Us
               </a>
@@ -54,4 +52,3 @@ export function About() {
     </section>
   )
 }
-

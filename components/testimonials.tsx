@@ -1,12 +1,13 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Star } from "lucide-react"
+import { Star, ChevronLeft, ChevronRight } from "lucide-react"
+import { useState } from "react"
 
 const testimonials = [
   {
     name: "Carly McHugh",
-    role: "Food Critic",
+    role: "Regular Customer",
     content:
       "Superb quality food with efficient service. Extremely good value for money and highly recommended!",
     rating: 5,
@@ -25,38 +26,119 @@ const testimonials = [
       "lovely outside dining area. lovely friendly staff, food was excellent",
     rating: 5,
   },
+  {
+    name: "Bernadette Langan",
+    role: "Regular Customer",
+    content:
+      "I had my son’s confirmation meal in the Strand bar recently. The menu was greatly food and service excellent. Highly recommend 💫",
+    rating: 5,
+  },
+  {
+    name: "Naoíse Bhéir",
+    role: "Regular Customer",
+    content:
+      "Had a lovely three course meal on Sunday in front of the fire 🔥 Amazing food for great value and brilliant friendly staff 🎉 The strand bar should be famous for there salt and chilli chicken 😍",
+    rating: 5,
+  },
+  {
+    name: "Marita Bonner",
+    role: "First-time Visitor",
+    content:
+      "Fabulous food and great service, despite them being extremely busy. Will definitely return!!",
+    rating: 5,
+  },
+  {
+    name: "Michaela Sadlier",
+    role: "Regular Customer",
+    content:
+      "Delicious food, good atmosphere, very friendly staff. Great service.",
+    rating: 5,
+  },
+  {
+    name: "Lesleyann McFadden",
+    role: "Regular Customer",
+    content:
+      "We had a beautiful meal here, followed by cocktails, staff were so attentive especially the polish girl, she gave us blankets as we went to sit outside with our cocktails . Highly recommend trying this place 🙌 and thank you Klaudia for being so attentive 😃",
+    rating: 5,
+  }
 ]
 
 export function Testimonials() {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const testimonialsPerPage = 3
+  const maxIndex = Math.ceil(testimonials.length / testimonialsPerPage) - 1
+
+  const nextTestimonials = () => {
+    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1))
+  }
+
+  const prevTestimonials = () => {
+    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1))
+  }
+
+  const currentTestimonials = testimonials.slice(
+    currentIndex * testimonialsPerPage,
+    (currentIndex + 1) * testimonialsPerPage
+  )
+
   return (
-    <section className="py-24 bg-secondary/30">
-      <div className="container mx-auto px-4">
-        <h2 className="font-cormorant text-4xl md:text-5xl text-center mb-12">What Our Guests Say</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
-              className="bg-background p-6 rounded-lg shadow-md"
-            >
-              <div className="flex mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-accent text-accent" />
-                ))}
-              </div>
-              <p className="text-muted-foreground mb-4">{testimonial.content}</p>
-              <div>
-                <p className="font-medium">{testimonial.name}</p>
-                <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-              </div>
-            </motion.div>
-          ))}
+    <section className="py-24 bg-muted/50">
+      <div className="container">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-3xl font-bold mb-4">What Our Customers Say</h2>
+          <p className="text-muted-foreground">
+            Read what our valued customers have to say about their experience
+          </p>
+        </motion.div>
+        <div className="relative">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
+            {currentTestimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-background p-6 rounded-lg shadow-md"
+              >
+                <div className="flex mb-2">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-4">{testimonial.content}</p>
+                <div>
+                  <p className="font-medium">{testimonial.name}</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+          <button
+            onClick={prevTestimonials}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 p-2 rounded-full bg-background shadow-md hover:bg-muted transition-colors"
+            aria-label="Previous testimonials"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+          <button
+            onClick={nextTestimonials}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 p-2 rounded-full bg-background shadow-md hover:bg-muted transition-colors"
+            aria-label="Next testimonials"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
         </div>
       </div>
     </section>
   )
 }
-

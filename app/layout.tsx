@@ -1,17 +1,15 @@
-import { Montserrat, Lora } from "next/font/google"
+import { Inter, Playfair_Display } from "next/font/google"
 import "./globals.css"
 import type React from "react"
 
-const montserrat = Montserrat({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-montserrat",
-  display: "swap",
+  variable: "--font-inter",
 })
 
-const lora = Lora({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-lora",
-  display: "swap",
+  variable: "--font-playfair",
 })
 
 export const metadata = {
@@ -25,9 +23,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${lora.variable}`}>
-      <body className="font-sans antialiased">{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
+        {children}
+      </body>
     </html>
   )
 }
-

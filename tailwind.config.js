@@ -12,8 +12,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-montserrat)"],
-        serif: ["var(--font-lora)"],
+        sans: ["var(--font-inter)"],
+        serif: ["var(--font-playfair)"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -59,4 +59,3 @@ module.exports = {
   },
   plugins: [require("tailwindcss-animate")],
 }
-

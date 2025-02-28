@@ -25,10 +25,10 @@ const menuItems = {
       description: "Sriracha mayo, chili, spring onion, carrot",
       price: "€9/17",
     },
-    { name: "Soup of the Day & Brown Bread", description: "", price: "€6.5" },
+    { name: "Soup of the Day & Brown Bread", description: "", price: "€6.50" },
     { name: "King Prawns", description: "Sweet chili & garlic cream sauce, homemade brown bread", price: "€9" },
     { name: "Chilli Beef Nachos", description: "Mozzarella, sweetcorn salsa, sour cream, jalapeños", price: "€9" },
-    { name: "Crispy Tempura Buffalo Cauliflower Wings", description: "Garlic mayo", price: "€8.5" },
+    { name: "Crispy Tempura Buffalo Cauliflower Wings", description: "Garlic mayo", price: "€8.50" },
     { name: "Black Pudding Croquettes", description: "Red pepper relish", price: "€9" },
     {
       name: "Strand Road Tacos",
@@ -44,7 +44,7 @@ const menuItems = {
     {
       name: "Surf & Turf",
       description: "10oz sirloin steak, king prawns, skinny fries, onion rings, pepper sauce",
-      price: "€29.5",
+      price: "€29.50",
     },
     {
       name: "Irish Nature Sirloin Steak",
@@ -58,7 +58,7 @@ const menuItems = {
     {
       name: "Pan Fried Salmon Fillet",
       description: "buttered green beans, lemon & dill sauce, side of choice",
-      price: "€19.5",
+      price: "€19.50",
     },
     {
       name: "The Strand Chicken Stir Fry",
@@ -70,7 +70,7 @@ const menuItems = {
       description: "rocket, parmesan, red pepper relish, pepper sauce, skinny fries",
       price: "€21",
     },
-    { name: "Chicken & Chorizo Linguine", description: "cajun cream, parmesan, garlic bread", price: "18" },
+    { name: "Chicken & Chorizo Linguine", description: "cajun cream, parmesan, garlic bread", price: "€18" },
     {
       name: "Crispy Panko Chicken Fillet",
       description: "creamy mash, buttered greens, mushroom cream sauce",
@@ -85,7 +85,7 @@ const menuItems = {
       name: "Seafood Linguine",
       description:
         "Mulroy Bay mussels, king prawns, smoked salmon, garden peas, dill, white wine garlic cream sauce, parmesan, garlic bread",
-      price: "22",
+      price: "€22",
     },
   ],
   burgers: [

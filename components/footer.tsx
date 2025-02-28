@@ -1,5 +1,24 @@
 import Link from "next/link"
-import { Facebook, Instagram, Twitter } from "lucide-react"
+import { Facebook, Instagram } from "lucide-react"
+
+function TikTokIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+    </svg>
+  )
+}
 
 export function Footer() {
   return (
@@ -47,7 +66,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#contact" className="hover:text-primary-foreground">
+                <Link href="/contact" className="hover:text-primary-foreground">
                   Contact
                 </Link>
               </li>
@@ -64,17 +83,27 @@ export function Footer() {
                 <Instagram className="h-6 w-6" />
               </a>
               <a href="#" className="hover:text-accent transition-colors">
-                <Twitter className="h-6 w-6" />
+                <TikTokIcon className="h-6 w-6" />
               </a>
             </div>
           </div>
         </div>
 
         <div className="mt-12 pt-8 border-t border-primary-foreground/20 text-center text-primary-foreground/60 text-sm">
-          <p>&copy; {new Date().getFullYear()} Strand Road Bar & Kitchen. All rights reserved.</p>
+          <p className="mb-2">&copy; {new Date().getFullYear()} Strand Road Bar & Kitchen. All rights reserved.</p>
+          <p>
+            Designed & Developed by{" "}
+            <a
+              href="https://davidgeaney.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent hover:text-accent/80 transition-colors font-medium"
+            >
+              David Geaney
+            </a>
+          </p>
         </div>
       </div>
     </footer>
   )
 }
-
