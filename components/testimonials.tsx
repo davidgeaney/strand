@@ -112,7 +112,7 @@ export function Testimonials() {
               >
                 <div className="flex mb-2">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                    <Star key={i} className="w-4 h-4 fill-[#E6B800] text-[#E6B800]" />
                   ))}
                 </div>
                 <p className="text-muted-foreground mb-4">{testimonial.content}</p>
@@ -123,16 +123,35 @@ export function Testimonials() {
               </motion.div>
             ))}
           </motion.div>
+          {/* Navigation buttons - moved below on mobile */}
+          <div className="flex justify-center items-center gap-4 mt-8 md:hidden">
+            <button
+              onClick={prevTestimonials}
+              className="p-2 rounded-full bg-background shadow-md hover:bg-muted transition-colors"
+              aria-label="Previous testimonials"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button
+              onClick={nextTestimonials}
+              className="p-2 rounded-full bg-background shadow-md hover:bg-muted transition-colors"
+              aria-label="Next testimonials"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
+
+          {/* Desktop navigation buttons */}
           <button
             onClick={prevTestimonials}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 p-2 rounded-full bg-background shadow-md hover:bg-muted transition-colors"
+            className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 p-2 rounded-full bg-background shadow-md hover:bg-muted transition-colors"
             aria-label="Previous testimonials"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           <button
             onClick={nextTestimonials}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 p-2 rounded-full bg-background shadow-md hover:bg-muted transition-colors"
+            className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 p-2 rounded-full bg-background shadow-md hover:bg-muted transition-colors"
             aria-label="Next testimonials"
           >
             <ChevronRight className="w-6 h-6" />
