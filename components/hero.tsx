@@ -26,11 +26,11 @@ const specialsMenu = [
   },
   {
     src: "/images/crab.png",
-    alt: "Layered Coffee",
-    name: "Signature Coffee",
-    description: "Three-layered coffee with fresh cream and coffee beans garnish",
-    price: "€6",
-    available: "Barista's Special"
+    alt: "Crab Special",
+    name: "Duo of Crab",
+    description: "Home made crab cakes served with butter crab claws and seasonal garnish",
+    price: "€28",
+    available: "Chef's Special"
   }
 ]
 
