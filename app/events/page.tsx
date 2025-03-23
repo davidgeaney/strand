@@ -124,7 +124,7 @@ export default function EventsPage() {
                     </div>
                     <Button
                       onClick={() => handleBookEvent(event.date)}
-                      className="w-full group"
+                      className="w-full group rounded-lg text-white hover:bg-[#F4A261]/90 transition-all duration-300"
                     >
                       Reserve Your Spot
                       <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />

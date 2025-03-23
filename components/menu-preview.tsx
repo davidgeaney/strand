@@ -76,7 +76,7 @@ export function MenuPreview() {
         <div className="text-center mt-12">
           <Link
             href="/menu"
-            className="inline-block px-6 py-3 border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+            className="inline-block px-6 py-3 rounded-lg border border-primary bg-transparent hover:bg-[#F4A261]/20 transition-all duration-300"
           >
             View Full Menu
           </Link>

@@ -183,7 +183,11 @@ function BookingPageContent() {
                 />
               </div>
 
-              <Button type="submit" className="w-full" disabled={isSubmitting}>
+              <Button 
+                type="submit" 
+                className="w-full rounded-lg bg-[#F4A261] text-white hover:bg-[#F4A261]/90 transition-all duration-300" 
+                disabled={isSubmitting}
+              >
                 {isSubmitting ? "Submitting..." : "Confirm Booking"}
               </Button>
             </form>

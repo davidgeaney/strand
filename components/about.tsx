@@ -36,12 +36,12 @@ export function About() {
               What We're About
             </h2>
             <p className="text-lg text-muted-foreground">
-            Good food, great atmosphere, and a focus on the things that matter. At Strand Road, we keep it simple—fresh ingredients, proper cooking, and a warm, welcoming space where you can relax and enjoy a meal, whether it’s a casual bite or something special.
+            Good food, great atmosphere, and a focus on the things that matter. At Strand Road, we keep it simple—fresh ingredients, proper cooking, and a warm, welcoming space where you can relax and enjoy a meal, whether it's a casual bite or something special.
             </p>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <motion.div whileHover={{ scale: 1 }} whileTap={{ scale: 0.95 }}>
               <a
                 href="/about"
-                className="inline-block px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors rounded-md"
+                className="inline-block px-6 py-3 rounded-lg border border-primary bg-transparent hover:bg-[#F4A261]/20 transition-all duration-300"
               >
                 Learn More About Us
               </a>

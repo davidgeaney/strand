@@ -157,7 +157,7 @@ export default function Contact() {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2260.483477911!2d-8.107640323611657!3d55.13501797310455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485f89066888ca93%3A0x6f0b5a6d8e424fe1!2sStrand%20Road%20Bar%20%26%20Kitchen!5e0!3m2!1sen!2sie!4v1708990478245!5m2!1sen!2sie"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1130.2417389556276!2d-8.1049!3d55.1351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f15!3m3!1m2!1s0x485f89066888ca93%3A0xf7c8c8a7b1203d1c!2sFalcarragh%2C%20Co.%20Donegal!5e0!3m2!1sen!2sie!4v1708990478245!5m2!1sen!2sie"
                 className="absolute inset-0 w-full h-full rounded-2xl"
                 style={{ border: 0 }}
                 allowFullScreen
@@ -173,7 +173,7 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <Button asChild size="lg" className="text-base px-8">
+            <Button asChild size="lg" className="text-base px-8 rounded-lg hover:bg-[#F4A261] text-white transition-all duration-300">
               <a href="/book">Make a Reservation</a>
             </Button>
           </motion.div>

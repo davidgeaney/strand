@@ -60,35 +60,7 @@ export function Navbar() {
       <div className={`relative z-50 bg-background/80 backdrop-blur-md border-b`}>
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
-            <button 
-              className="lg:hidden w-10 h-10 flex items-center justify-center -ml-2 relative z-50"
-              onClick={() => setIsOpen(!isOpen)}
-              aria-label="Toggle menu"
-            >
-              <AnimatePresence mode="wait">
-                {isOpen ? (
-                  <motion.div
-                    key="close"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <X className="w-6 h-6" />
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="menu"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <Menu className="w-6 h-6" />
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </button>
+            <div className="w-10 lg:hidden"></div>
 
             <div className="hidden lg:flex items-center space-x-8">
               <Link href="/book" className="text-sm font-medium hover:text-accent transition-colors">
@@ -118,8 +90,35 @@ export function Navbar() {
               </Link>
             </div>
 
-            {/* Spacer for mobile to balance the menu button */}
-            <div className="w-10 lg:hidden"></div>
+            <button 
+              className="lg:hidden w-10 h-10 flex items-center justify-center -mr-2 relative z-50"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+            >
+              <AnimatePresence mode="wait">
+                {isOpen ? (
+                  <motion.div
+                    key="close"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <X className="w-6 h-6" />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="menu"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Menu className="w-6 h-6" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </button>
           </div>
         </div>
       </div>

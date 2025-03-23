@@ -67,10 +67,10 @@ export function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <h1 className="font-serif text-5xl md:text-6xl lg:text-8xl xl:text-9xl tracking-tight">
-                  Good Food,
+                <h1 className="font-serif text-5xl md:text-6xl lg:text-8xl xl:text-9xl tracking-tight text-accent">
+                Hungry?
                 </h1>
-                <p className="font-serif text-4xl md:text-5xl lg:text-7xl xl:text-8xl text-accent">Done Right</p>
+                <p className="font-serif text-4xl md:text-5xl lg:text-7xl xl:text-8xl">We’ve Got You.</p>
               </motion.div>
 
               {/* Description */}
@@ -81,7 +81,7 @@ export function Hero() {
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground/90 leading-relaxed">
-                  Locally sourced, freshly prepared, and full of flavor. Whether it's a casual bite or something special, we've got you covered.
+                Serving up fresh, flavorful dishes in Falcarragh. Stop by today or book your table online.
                 </p>
               </motion.div>
 

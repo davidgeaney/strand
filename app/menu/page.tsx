@@ -126,9 +126,9 @@ export default function MenuPage() {
       <section className="py-12 md:py-24">
         <div className="container px-4 mx-auto">
           <div className="max-w-3xl mx-auto mb-16">
-            <h1 className="font-cormorant text-5xl md:text-7xl mb-12">Our Menu</h1>
+            <h1 className="font-cormorant text-5xl md:text-7xl mb-12 text-center">Our Menu</h1>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 justify-center">
               {categories.map((category) => (
                 <button
                   key={category.id}
@@ -136,8 +136,8 @@ export default function MenuPage() {
                   className={`px-6 py-2 text-sm tracking-wider transition-colors
                     ${
                       activeCategory === category.id
-                        ? "bg-primary text-primary-foreground"
-                        : "border border-primary hover:bg-primary/5"
+                        ? "bg-[#F4A261] text-primary-foreground"
+                        : "border border-primary hover:bg-[#F4A261]/30"
                     }`}
                 >
                   {category.name}
@@ -152,7 +152,7 @@ export default function MenuPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="grid md:grid-cols-2 gap-8"
+              className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto"
             >
               {menuItems[activeCategory]?.map((item, index) => (
                 <div key={index} className="group">
